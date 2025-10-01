@@ -1,0 +1,125 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; 
+}
+
+.contenedor-principal {
+    display: grid;
+    /* Define la estructura principal: lateral, principal. El header es de ancho completo. */
+    grid-template-columns: 250px 1fr; /* 250px para el lateral, 1fr para el contenido */
+    grid-template-rows: auto 1fr; /* Una fila para el header, una para el contenido/lateral */
+    grid-template-areas: 
+        "header header"
+        "aside main";
+    min-height: 100vh;
+}
+
+/* BARRA SUPERIOR */
+.barra-superior {
+    grid-area: header;
+    background-color: #0b5986; 
+    height: 60px; /* Altura de la barra superior */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: white;
+}
+/* ... Estilos para .buscador, .perfil, etc. ... */
+.buscador input {
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    /* ... más estilos para que se parezca al de la imagen ... */
+}
+
+/* NAVEGACIÓN LATERAL */
+.navegacion-lateral {
+    grid-area: aside;
+    background-color: #fff9f0; /* Beige claro */
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+/* ... Estilos para .marcador, el menú, los puntos rojos, etc. ... */
+.punto-rojo {
+    color: red;
+    margin-right: 5px;
+}
+.menu-inferior ul li {
+    padding: 10px 0;
+    /* ... y otros estilos para iconos ... */
+}
+
+/* CONTENIDO PRINCIPAL */
+.contenido-principal {
+    grid-area: main;
+    padding: 20px;
+    background-color: white; /* El fondo principal parece blanco */
+}
+
+/* ESTILOS DE LAS TARJETAS DE CLASE
+*/
+.tarjeta-clase {
+    background-color: #fff4e6; /* Fondo beige suave de las tarjetas */
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    /* Sombra suave para darle un efecto elevado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-left: 5px solid #5dc6f7; /* Borde vertical rojo a la izquierda */
+}
+
+.cabecera-profesor {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.icono-perfil {
+    font-size: 24px;
+    color: #5d5df7; /* Azul para el ícono de perfil */
+    margin-right: 10px;
+}
+
+.info-clase h3 {
+    color: #141111; 
+    margin-top: 0;
+}
+
+.descripcion {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #17034e;
+    margin-bottom: 15px;
+    min-height: 30px; /* Para simular el área de texto */
+}
+
+.boton-unirse {
+    background-color: #6bacc9; /* celeste */
+    color: rgb(224, 193, 228);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 20px;
+    /* Sombra suave al botón */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.reacciones {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.reacciones span:first-child {
+    font-weight: bold;
+    color: #888;
+    margin-right: 15px;
+}
