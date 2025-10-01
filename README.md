@@ -1,2 +1,86 @@
 # Naru-Estudio-Coding
 En este repositorios irán los avances del código
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   
+    <meta charset="UTF-8"> <!-- codificacion en utf-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Naru-Estudio - pagina de ayudantias"> <!-- descripcion de la pagina -->
+    <meta name="keywords" content="Estudio, ayudantias, tutoriales, metodos de Estudios"> <!-- palabras clave para el buscador -->
+    <title>Naru-Estudio</title> <!-- titulo de la pagina -->
+    
+    <!-- hoja de estilos externa en carpeta css -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+     <div class="contenedor-principal">
+        <header class="barra-superior">
+            <div class="menu-hamburguesa">☰</div>
+            <div class="logo">
+                </div>
+            <div class="buscador">
+                <input type="text" placeholder="buscar clase o ayudantia">
+                <button type="submit">🔍</button>
+            </div>
+            <div class="perfil">
+                <img src="perfil.png" alt="Perfil">
+            </div>
+        </header>
+
+        <aside class="navegacion-lateral">
+            <div class="marcador">
+                <h3>Marcadores</h3>
+                <ul>
+                    <li><span class="punto-rojo">●</span> Clase A</li>
+                    <li><span class="punto-rojo">●</span> Clase B</li>
+                </ul>
+            </div>
+            <hr>
+            <div class="menu-inferior">
+                <ul>
+                    <li><span class="icono">❓</span> Explora</li>
+                    <li><span class="icono">▶</span> En vivo</li>
+                    <li><span class="icono">📅</span> Calendario</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="contenido-principal">
+            
+            <section class="tarjeta-clase">
+                <div class="cabecera-profesor">
+                    <span class="icono-perfil">👤</span>
+                    <h2>Profesor A</h2>
+                </div>
+                <div class="info-clase">
+                    <h3>Tema de clases</h3>
+                    <div class="descripcion">Descripción</div>
+                    <button class="boton-unirse">Unirte</button>
+                    <div class="reacciones">
+                        <span>+14</span>
+                        <span class="icono-reaccion-1">👤</span>
+                        <span class="icono-reaccion-2">👤</span>
+                        <span class="icono-reaccion-3">👤</span>
+                        <span class="icono-reaccion-4">👤</span>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="separador">
+
+            <section class="tarjeta-clase">
+                <div class="cabecera-profesor">
+                    <span class="icono-perfil">👤</span>
+                    <h2>Profesor B</h2>
+                </div>
+                <div class="info-clase">
+                    <h3>Tema de clases</h3>
+                    <div class="descripcion">Descripción</div>
+                    </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>
