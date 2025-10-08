@@ -1,0 +1,9 @@
+Secuencia de prompts para generar el diagrama de objetos UML.
+
+Prompt 1: Debo crear un diagrama UML que muestre la estructura de un sistema presente en la página web Naru-Estudio. Estaba pensando en hacerlo del chat que se implemente. Para ello requeriría crear un código de PlantUML para crear el diagrama. Puedes hacerlo, estás familiarizado con ese lenguaje? Te daré a continuación los elementos que requiero.
+
+Prompt 2: Necesito Usuario, Mensaje y Canal, pero no sé cómo más podría complejizarlo, es decir, dar un pasito adelante en la complejización del sistema.
+
+Prompt 3: Ok, primero que nada, tiene que ser un diagrama de objetos, no diagrama de clases. y sí, acepto que Usuario pueda tener un Rol que determine los permisos en Canal.
+
+Prompt 4: Agrega un hilo/respuesta.
