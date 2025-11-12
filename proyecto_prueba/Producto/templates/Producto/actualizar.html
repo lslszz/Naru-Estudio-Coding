@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(154, 204, 218);
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Edición de productos</h1>
+        
+        <form action="/productos/actualizar/{{ producto.id }}" method="POST">
+        {% csrf_token %}
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" value="{{ producto.nombre }}" required>
+
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" value="{{ producto.cantidad }}" required>
+
+            <button type="submit">Guardar Cambios</button>
+        </form>
+</body>
+</html>

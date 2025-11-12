@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(154, 204, 218);
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Vista de Productos</h1>
+    <ul>
+        {% for producto in productos %}
+        <li>
+            <strong>{{ producto.nombre }}</strong>
+            Cantidad: {{producto.cantidad}}
+        </li>
+        {% empty %}
+        <li>No hay productos registrados.</li>
+        <li>{nombre}</li>
+        <li>{cantidad}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
