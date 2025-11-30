@@ -1,24 +1,12 @@
--- Creación previa de BD "naru_estudio" en SQL en la consola Postgres
+-- Creación previa de BD "naru_estudio" en SQL en la consola
+-- Postgres y del model Usuario en models.py
 
-CREATE TABLE usuarios (
-    email VARCHAR(255) UNIQUE NOT NULL,
-    nombre VARCHAR(100) NOT NULL,
-    apellido VARCHAR(100) NOT NULL,
+-- Esto parchea el problema de timestamp que Django no está haciendo
+-- en la columna creado_en
+ALTER TABLE naruapp_usuario
+ALTER COLUMN creado_en SET DEFAULT NOW();
 
-    rango VARCHAR(20) NOT NULL CHECK (
-        rango IN ('admin', 'moderador', 'normal')
-    ),
-
-    rol VARCHAR(20) NOT NULL CHECK (
-        rol IN ('supervisor', 'tutor', 'estudiante')
-    ),
-
-    creado_en TIMESTAMP DEFAULT NOW(),
-
-    PRIMARY KEY (email)
-);
-
-INSERT INTO usuarios (email, nombre, apellido, rango, rol) VALUES
+INSERT INTO naruapp_usuario (email, nombre, apellido, rango, rol) VALUES
 ('camila.munoz@alu.uct.cl', 'Camila', 'Muñoz', 'admin', 'supervisor'),
 ('javier.rojas@mayor.cl', 'Javier', 'Rojas', 'admin', 'supervisor'),
 ('valentina.diaz@ufrontera.cl', 'Valentina', 'Díaz', 'moderador', 'supervisor'),
