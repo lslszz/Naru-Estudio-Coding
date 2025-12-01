@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Conexión Tutoría Estudiantil</title>
+    <!-- Incluye Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Definición de la paleta de colores y variables */
+        :root {
+            --yellow: #FFD54F;
+            --card-bg: #ffffff;
+            --muted: #6b7280;
+            --accent: #0f172a;
+            --input-bg: #fbfbfb;
+            --radius: 12px;
+            --shadow: 0 8px 30px rgba(15,23,42,0.08);
+            --darker-yellow: #FBC02D; /* Tono para hover y focus más oscuro */
+        }
+        
+        /* Configuración de fuente y estilos globales */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* CAMBIO: Fondo principal ahora usa el color --yellow */
+            background-color: var(--yellow); 
+        }
+
+        /* Clase para aplicar el radio y la sombra personalizados */
+        .custom-card-style {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+        }
+
+        /* Estilos de enfoque (focus) para los inputs */
+        .input-focus:focus {
+            --tw-ring-color: var(--yellow);
+            border-color: var(--yellow);
+        }
+
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 sm:p-8">
+
+    <!-- Contenedor principal del formulario -->
+    <div class="w-full max-w-md p-8 sm:p-10 border border-gray-100 custom-card-style">
+        
+        <!-- Encabezado -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-extrabold text-[var(--accent)]">
+                Únete a la Comunidad
+            </h1>
+            <p class="mt-2 text-sm text-[var(--muted)]">
+                Completa tus datos para crear tu cuenta.
+            </p>
+        </header>
+
+        <!-- Formulario de Registro -->
+        <!-- Solo incluye email, nombre, y apellido -->
+        <form action="#" method="POST" class="space-y-6">
+        <!-- Inclusión de CSRF token usado por Django -->
+        {% csrf_token %}
+            <!-- Campo: Email -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" name="email" id="email" required 
+                       class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-1 input-focus bg-[var(--input-bg)] sm:text-sm"
+                       placeholder="tu.correo@ejemplo.com">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Campo: Nombre -->
+                <div>
+                    <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" required 
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-1 input-focus bg-[var(--input-bg)] sm:text-sm"
+                           placeholder="Tu nombre">
+                </div>
+
+                <!-- Campo: Apellido -->
+                <div>
+                    <label for="apellido" class="block text-sm font-medium text-gray-700">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" required 
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-1 input-focus bg-[var(--input-bg)] sm:text-sm"
+                           placeholder="Tu apellido">
+                </div>
+            </div>
+
+            <!-- Aquí se eliminarion los campos 'rol' y 'rango' -->
+            
+            <!-- Botón de Registro -->
+            <div>
+                <button type="submit" 
+                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-lg text-sm font-medium text-white 
+                               /* CAMBIO: Botón usa el color de acento (--accent) */
+                               bg-[var(--accent)] hover:bg-[#1e293b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)] 
+                               transition duration-150 ease-in-out">
+                    Crear Cuenta
+                </button>
+            </div>
+        </form>
+        
+        <!-- Pie de página del formulario -->
+        <div class="mt-6 text-center">
+            <p class="text-sm">
+                ¿Ya tienes una cuenta?
+                <a href="#" class="font-medium text-[var(--yellow)] hover:text-[var(--darker-yellow)]">
+                    Inicia sesión aquí
+                </a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

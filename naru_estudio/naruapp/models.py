@@ -15,7 +15,8 @@ class Usuario(models.Model):
             ('admin', 'admin'),
             ('moderador', 'moderador'),
             ('normal', 'normal'),
-        ]
+        ],
+        default='normal'
     )
 
     rol = models.CharField(
@@ -24,7 +25,8 @@ class Usuario(models.Model):
             ('supervisor', 'supervisor'),
             ('tutor', 'tutor'),
             ('estudiante', 'estudiante'),
-        ]
+        ],
+        default='estudiante',
     )
 
     creado_en = models.DateTimeField(auto_now_add=True)
