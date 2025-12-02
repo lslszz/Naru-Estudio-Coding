@@ -1,0 +1,43 @@
+/* Definición de la paleta de colores y variables */
+:root {
+    --yellow: #FFD54F;
+    --card-bg: #ffffff;
+    --muted: #6b7280;
+    --accent: #0f172a;
+    --input-bg: #fbfbfb;
+    --radius: 12px;
+    --shadow: 0 8px 30px rgba(15,23,42,0.08);
+    --darker-yellow: #FBC02D; /* Tono para hover y focus más oscuro */
+}
+
+/* Configuración de fuente y estilos globales */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--yellow); 
+}
+
+/* Clase para aplicar el radio y la sombra personalizados */
+/* Nota: En la tarjeta de dos columnas, la clase 'overflow-hidden' en el HTML 
+   maneja el 'border-radius' para los bordes internos de las columnas. */
+.custom-card-style {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius); /* Se mantiene el radio exterior */
+}
+
+/* Estilos de enfoque (focus) para los inputs */
+.input-focus:focus {
+    --tw-ring-color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+/* * Estilo adicional para la imagen (Opcional)
+ * Asegura que la imagen no tenga un fondo blanco si es transparente,
+ * aunque con object-cover y h-full no es estrictamente necesario.
+ * Se define un alto mínimo en la tarjeta para que la imagen tenga espacio.
+*/
+@media (min-width: 768px) { /* Solo aplica en pantallas medianas y mayores */
+    .custom-card-style {
+        min-height: 500px; /* Define una altura mínima para el contenedor */
+    }
+}

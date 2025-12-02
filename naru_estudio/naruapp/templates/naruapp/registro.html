@@ -1,50 +1,17 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - Conexión Tutoría Estudiantil</title>
-    <!-- Incluye Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Definición de la paleta de colores y variables */
-        :root {
-            --yellow: #FFD54F;
-            --card-bg: #ffffff;
-            --muted: #6b7280;
-            --accent: #0f172a;
-            --input-bg: #fbfbfb;
-            --radius: 12px;
-            --shadow: 0 8px 30px rgba(15,23,42,0.08);
-            --darker-yellow: #FBC02D; /* Tono para hover y focus más oscuro */
-        }
-        
-        /* Configuración de fuente y estilos globales */
-        body {
-            font-family: 'Inter', sans-serif;
-            /* CAMBIO: Fondo principal ahora usa el color --yellow */
-            background-color: var(--yellow); 
-        }
-
-        /* Clase para aplicar el radio y la sombra personalizados */
-        .custom-card-style {
-            background-color: var(--card-bg);
-            box-shadow: var(--shadow);
-            border-radius: var(--radius);
-        }
-
-        /* Estilos de enfoque (focus) para los inputs */
-        .input-focus:focus {
-            --tw-ring-color: var(--yellow);
-            border-color: var(--yellow);
-        }
-
-    </style>
+        <title>Registro - Conexión Tutoría Estudiantil</title>
+        <!-- Incluye Tailwind CSS (CDN) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'naruapp/style_cuenta.css' %}">
 </head>
 <body class="flex items-center justify-center min-h-screen p-4 sm:p-8">
-
+    {% block content %}
     <!-- Contenedor principal del formulario -->
     <div class="w-full max-w-md p-8 sm:p-10 border border-gray-100 custom-card-style">
         
@@ -113,6 +80,6 @@
             </p>
         </div>
     </div>
-
+    {% endblock %}
 </body>
 </html>

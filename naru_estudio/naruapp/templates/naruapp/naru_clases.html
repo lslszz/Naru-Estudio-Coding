@@ -1,0 +1,103 @@
+{% extends "naruapp/base-naru.html" %}
+{% load static %}
+
+{% block divPropio %}
+    <!-- Sección de Marcadores/Categorías Destacadas -->
+<div class="divPropio marker-section flex flex-col pt-4">
+    <h2 class="px-6 pb-2 text-lg font-bold text-[var(--text-dark)]">
+        Categorías
+    </h2>
+    <!-- Categoría A (Punto Rojo Fuerte) -->
+    <div class="marker-item">
+        <div class="marker-dot-a"></div>
+        <span>Educación</span>
+    </div>
+    <!-- Categoría B (Punto Azul Oscuro) -->
+    <div class="marker-item">
+        <div class="marker-dot-b"></div>
+        <span>Tecnología</span>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="main-content-area">
+
+        <header class="app-header">
+            <div class="flex items-center bg-white rounded-full shadow-sm pr-2">
+                <input type="text" placeholder="Buscar..." class="search-bar focus:outline-none text-sm text-gray-700">
+                <i class="bi bi-search text-xl text-gray-500 cursor-pointer"></i>
+            </div>
+            
+            <div class="ml-auto">
+                <i class="bi bi-person-circle text-4xl text-[var(--accent)] cursor-pointer"></i>
+            </div>
+        </header>
+
+        <main class="feed-container">
+
+            <div class="class-card">
+                <div class="flex items-start mb-4">
+                    <div class="profile-avatar avatar-prof-a bg-white flex items-center justify-center">
+                        <i class="bi bi-person-fill text-3xl text-[var(--accent)]"></i>
+                    </div>
+                    <div class="ml-4 flex-grow">
+                        <h3 class="text-lg font-semibold text-[var(--accent)]">Profesor A</h3>
+                        <h2 class="text-2xl font-extrabold text-[var(--accent)] mt-1">Tema de clases</h2>
+                        <div class="bg-white p-3 rounded-lg mt-3 border border-gray-200">
+                            <p class="text-sm text-[var(--muted)]">Descripción</p>
+                        </div>
+                        
+                        <div class="flex items-center mt-4">
+                            <button class="join-button text-white px-6 py-2 rounded-lg font-bold text-sm shadow-md">
+                                Unirte
+                            </button>
+                            
+                            <div class="flex items-center ml-6">
+                                <span class="text-sm font-semibold text-[var(--muted)] mr-2">+14</span>
+                                <div class="flex -space-x-2">
+                                    <div class="member-avatar"></div>
+                                    <div class="member-avatar"></div>
+                                    <div class="member-avatar"></div>
+                                    <div class="member-avatar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="flex items-start mb-4">
+                    <div class="profile-avatar avatar-prof-b bg-white flex items-center justify-center">
+                        <i class="bi bi-person-fill text-3xl text-[var(--accent)]"></i>
+                    </div>
+                    <div class="ml-4 flex-grow">
+                        <h3 class="text-lg font-semibold text-[var(--accent)]">Profesor B</h3>
+                        <h2 class="text-2xl font-extrabold text-[var(--accent)] mt-1">Tema de clases</h2>
+                        <div class="bg-white p-3 rounded-lg mt-3 border border-gray-200">
+                            <p class="text-sm text-[var(--muted)]">Descripción</p>
+                        </div>
+                        
+                        <div class="flex items-center mt-4">
+                            <button class="join-button text-white px-6 py-2 rounded-lg font-bold text-sm shadow-md">
+                                Unirte
+                            </button>
+                            
+                            <div class="flex items-center ml-6">
+                                <span class="text-sm font-semibold text-[var(--muted)] mr-2">+8</span>
+                                <div class="flex -space-x-2">
+                                    <div class="member-avatar bg-[#FBC02D]"></div>
+                                    <div class="member-avatar bg-[#1E88E5]"></div>
+                                    <div class="member-avatar bg-[#00A2C9]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+{% endblock %}

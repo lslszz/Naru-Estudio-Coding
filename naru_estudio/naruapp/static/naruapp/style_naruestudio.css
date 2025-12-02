@@ -1,0 +1,216 @@
+/* Definición de la paleta de colores y variables (Amarillo Brillante y Azul Oscuro) */
+:root {
+    /* Colores Primarios Fuertes */
+    --primary-yellow: #FFC107; /* Amarillo Intenso (Botones, Acentos) */
+    --dark-blue: #1A237E;      /* Azul Oscuro (Cabecera, Fondo) */
+    --text-dark: #212529;      /* Texto Principal */
+    --secondary-red: #D32F2F;  /* Rojo para el marcador "Educación" */
+    
+    /* Colores de Fondo y Elementos */
+    --bg-light: #F8F9FA;       /* Fondo General muy claro */
+    --card-bg: #FFFFFF;        /* Fondo de las tarjetas */
+    --sidebar-bg: #FFFFFF;     /* Fondo de la barra lateral */
+    --article-card-bg: #FFFDE7; /* Fondo suave del artículo (Amarillo muy claro) */
+    --metadata-bg: #E3F2FD;    /* Fondo para metadatos (Azul Claro) */
+    
+    /* Estructura y Estilos */
+    --radius: 8px;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+    --sidebar-width: 250px;
+}
+
+/* Configuración de fuente y estilos globales */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light); 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    overflow-y: hidden;
+}
+
+/* Estilo para el contenedor principal de la aplicación */
+.app-container {
+    display: flex;
+    width: 100%;
+}
+
+/* --- Estilos de la Barra Lateral (Sidebar) --- */
+.sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    background-color: var(--sidebar-bg);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #E0E0E0; 
+    color: var(--text-dark);
+}
+
+/* Estilo de la sección de Marcadores */
+.marker-section {
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 1rem;
+}
+
+/* Estilo para los elementos de Marcadores */
+.marker-item {
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+/* Puntos de Marcadores: Colores Fuertes */
+.marker-dot-a {
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-red); /* Rojo Fuerte para Educación */
+    border-radius: 50%;
+    margin-right: 0.75rem;
+}
+
+.marker-dot-b {
+    width: 8px;
+    height: 8px;
+    background-color: var(--dark-blue); /* Azul Oscuro para Tecnología */
+    border-radius: 50%;
+    margin-right: 0.75rem;
+}
+
+/* Estilo de los iconos de navegación inferior */
+.nav-icon-item {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.nav-icon-item:hover {
+    background-color: #ECEFF1;
+}
+
+/* --- Estilos del Contenido Principal (Header + Feed) --- */
+.main-content-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* --- Estilos de la Cabecera (Header) - Azul Oscuro --- */
+.app-header {
+    background-color: var(--dark-blue); /* Azul Oscuro Fuerte */
+    height: 70px; 
+    flex-shrink: 0; 
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Barra de Búsqueda */
+.search-bar-container {
+    background-color: white;
+    border-radius: 50px;
+    padding: 0 1rem;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    width: 350px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex-grow: 1;
+    padding-right: 0.5rem;
+}
+.search-icon {
+    color: #9E9E9E;
+}
+
+/* Avatar de Usuario en Header */
+.header-avatar {
+    color: var(--primary-yellow); /* Icono de perfil en Amarillo */
+}
+
+/* --- Estilos de las Tarjetas de Artículo (Feed) --- */
+.feed-container {
+    padding: 1.5rem;
+    flex-grow: 1;
+    background-color: var(--bg-light);
+}
+
+.article-card { /* La nueva tarjeta para entradas */
+    background-color: var(--article-card-bg); /* Fondo Amarillo muy claro */
+    border: 1px solid #FFECB3; /* Borde sutil amarillo claro */
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+    display: flex; 
+    gap: 1.5rem;
+}
+
+/* Ícono/Imagen del Artículo Destacado */
+.article-icon-container {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: var(--radius);
+    background-color: var(--primary-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Botón de Acción - Amarillo Fuerte */
+.join-button { 
+    background-color: var(--primary-yellow); 
+    color: var(--text-dark); 
+    font-weight: 700;
+    transition: background-color 0.15s;
+}
+
+.join-button:hover {
+    background-color: #FFB300; 
+}
+
+/* Metadatos (Autor, Fecha, Categoría) */
+.metadata-pill {
+    background-color: var(--metadata-bg); /* Azul Claro */
+    color: var(--dark-blue);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.metadata-pill i {
+    font-size: 1rem; /* Asegura que los iconos de metadata tengan buen tamaño */
+}
+
+/* Media Query para responsividad */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; 
+    }
+    .search-bar-container {
+        width: 100%;
+    }
+    .article-card {
+        flex-direction: column; /* Apila el icono y el texto en móvil */
+    }
+    .article-icon-container {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 1rem;
+    }
+}
