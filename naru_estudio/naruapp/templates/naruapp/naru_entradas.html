@@ -23,7 +23,6 @@
 {% block content %}
 <!-- Área de Contenido Principal -->
     <div class="main-content-area">
-
         <!-- Cabecera (Header) - Azul Oscuro -->
         <header class="app-header">
             <!-- Barra de Búsqueda -->
@@ -42,8 +41,11 @@
         <!-- Contenedor del Feed de Artículos -->
         <main class="feed-container">
             <h1 class="text-3xl font-extrabold text-[var(--text-dark)] mb-6">Últimas Entradas</h1>
-
-            <!-- Tarjeta de Artículo 1: Educación -->
+            <a href="{% url 'naru_entrada_nueva' %}" class="btnCrearEntrada px-6 py-3 rounded-xl shadow-lg mb-8 inline-flex items-center transition duration-150 ease-in-out">
+                <i class="bi bi-plus-circle-fill text-xl mr-3"></i>
+                Crear Nueva Entrada
+            </a>
+            {% for entrada in entradas %}
             <div class="article-card">
                 <!-- Ícono Destacado (Amarillo Fuerte) -->
                 <div class="article-icon-container">
@@ -51,75 +53,37 @@
                 </div>
                 <div class="flex-grow">
                     <h2 class="text-2xl font-extrabold text-[var(--dark-blue)] mb-2">
-                        Las 5 Claves para una Tutoría Efectiva
+                        {{ entrada.titulo }}
                     </h2>
                     
                     <!-- Metadatos (Pills) -->
                     <div class="flex items-center space-x-3 mb-3">
                         <span class="metadata-pill">
                             <i class="bi bi-person-fill"></i>
-                            Ana García
+                            {{ entrada.autor }}
                         </span>
                         <span class="metadata-pill">
                             <i class="bi bi-calendar-event"></i>
-                            29 de Nov, 2025
+                            {{ entrada.fecha }}
                         </span>
                         <span class="metadata-pill" style="background-color: var(--secondary-red); color: white;">
                             <i class="bi bi-tags-fill"></i>
-                            Educación
+                            {{ entrada.categoria }}
                         </span>
                     </div>
                     
                     <!-- Snippet de Descripción -->
                     <p class="text-gray-600 mb-4 text-sm">
-                        Descubre cómo maximizar el impacto de tus sesiones de estudio y tutoría. Analizamos la importancia de la retroalimentación activa y la planificación estructurada.
+                        {{ entrada.resumen }}
                     </p>
                     
                     <!-- Botón de Acción -->
-                    <button class="join-button px-6 py-2 rounded-lg text-sm shadow-md">
+                    <a href="{% url 'naru_entrada' id=entrada.id %}"" class="join-button px-6 py-2 rounded-lg text-sm shadow-md">
                         Leer Artículo
-                    </button>
+                    </a>
                 </div>
             </div>
-
-            <!-- Tarjeta de Artículo 2: Tecnología -->
-            <div class="article-card">
-                <!-- Ícono Destacado (Amarillo Fuerte) -->
-                <div class="article-icon-container">
-                    <i class="bi bi-code-slash text-5xl text-[var(--dark-blue)]"></i>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-extrabold text-[var(--dark-blue)] mb-2">
-                        Integrando IA en el Proceso de Aprendizaje
-                    </h2>
-                    
-                    <!-- Metadatos (Pills) -->
-                    <div class="flex items-center space-x-3 mb-3">
-                        <span class="metadata-pill">
-                            <i class="bi bi-person-fill"></i>
-                            Roberto P.
-                        </span>
-                        <span class="metadata-pill">
-                            <i class="bi bi-calendar-event"></i>
-                            25 de Nov, 2025
-                        </span>
-                        <span class="metadata-pill" style="background-color: var(--dark-blue); color: white;">
-                            <i class="bi bi-tags-fill"></i>
-                            Tecnología
-                        </span>
-                    </div>
-                    
-                    <!-- Snippet de Descripción -->
-                    <p class="text-gray-600 mb-4 text-sm">
-                        Exploramos las herramientas de inteligencia artificial que están revolucionando la forma en que los estudiantes acceden a la información y personalizan sus rutas de estudio.
-                    </p>
-                    
-                    <!-- Botón de Acción -->
-                    <button class="join-button px-6 py-2 rounded-lg text-sm shadow-md">
-                        Ver Comentarios
-                    </button>
-                </div>
-            </div>
+            {% endfor %}
 
         </main>
 

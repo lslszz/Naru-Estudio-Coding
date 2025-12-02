@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import UsuarioForm
-from .models import Usuario
+from .models import Entrada
 
 
 # ----------------------------------------------------------------------------
@@ -35,4 +35,12 @@ def naru_clases(request):
     return render(request, "naruapp/naru_clases.html")
 
 def naru_entradas(request):
-    return render(request, "naruapp/naru_entradas.html")
+    entradas = Entrada.objects.order_by("-fecha")
+    return render(request, "naruapp/naru_entradas.html", {"entradas": entradas})
+
+def naru_entrada(request, id):
+    entrada = get_object_or_404(Entrada, id=id)
+    return render(request, "naruapp/naru_entrada.html", {"entrada": entrada})
+
+def naru_entrada_nueva(request):
+    pass
