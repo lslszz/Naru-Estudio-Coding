@@ -33,3 +33,21 @@ class Usuario(models.Model):
 
     def __str__(self):
         return f"{self.nombre} {self.apellido} ({self.email})"
+
+
+class Entrada(models.Model):
+    titulo = models.CharField(max_length=50)
+    # Cascade: Si el autor desaparece, se borran sus entradas
+    autor = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    fecha = models.DateTimeField(auto_now_add=True)
+    resumen = models.TextField(max_length=250)
+    contenido = models.TextField()
+
+    categoria = models.CharField(
+        choices=[
+            ('estudio', 'estudio'),
+            ('fisica', 'fisica'),
+            ('matematicas', 'matematicas'),
+            ('ingles', 'ingles')
+        ]
+    )
