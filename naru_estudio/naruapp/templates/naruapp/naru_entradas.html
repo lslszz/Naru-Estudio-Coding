@@ -23,7 +23,6 @@
 {% block content %}
 <!-- Área de Contenido Principal -->
     <div class="main-content-area">
-
         <!-- Cabecera (Header) - Azul Oscuro -->
         <header class="app-header">
             <!-- Barra de Búsqueda -->
@@ -42,7 +41,10 @@
         <!-- Contenedor del Feed de Artículos -->
         <main class="feed-container">
             <h1 class="text-3xl font-extrabold text-[var(--text-dark)] mb-6">Últimas Entradas</h1>
-
+            <a href="{% url 'naru_entrada_nueva' %}" class="btnCrearEntrada px-6 py-3 rounded-xl shadow-lg mb-8 inline-flex items-center transition duration-150 ease-in-out">
+                <i class="bi bi-plus-circle-fill text-xl mr-3"></i>
+                Crear Nueva Entrada
+            </a>
             {% for entrada in entradas %}
             <div class="article-card">
                 <!-- Ícono Destacado (Amarillo Fuerte) -->
@@ -76,9 +78,9 @@
                     </p>
                     
                     <!-- Botón de Acción -->
-                    <button class="join-button px-6 py-2 rounded-lg text-sm shadow-md">
+                    <a href="{% url 'naru_entrada' id=entrada.id %}"" class="join-button px-6 py-2 rounded-lg text-sm shadow-md">
                         Leer Artículo
-                    </button>
+                    </a>
                 </div>
             </div>
             {% endfor %}

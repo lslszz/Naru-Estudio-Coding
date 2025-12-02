@@ -27,7 +27,6 @@ body {
     padding: 0;
     display: flex;
     min-height: 100vh;
-    overflow-y: hidden;
 }
 
 /* Estilo para el contenedor principal de la aplicación */
@@ -195,6 +194,17 @@ body {
 }
 .metadata-pill i {
     font-size: 1rem; /* Asegura que los iconos de metadata tengan buen tamaño */
+}
+
+.btnCrearEntrada {
+    background-color: #706b7a;
+    color: white;
+    font-weight: 700;
+    text-decoration: none; /* Asegurar que no tenga subrayado de enlace */
+}
+
+.btnCrearEntrada:hover {
+    background-color: #4f4660;
 }
 
 /* Media Query para responsividad */
