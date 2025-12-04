@@ -21,13 +21,14 @@
     <!-- Contenedor principal de la aplicación -->
     <div class="app-container">
 
+        <!-- Icono de Hamburguesa/Menú (Top-Left) -->
+        <div class="divHamburguesa p-4 border-b border-gray-200 bg-gray-500">
+            <i class="bi bi-list text-3xl text-[var(--text-dark)] cursor-pointer"></i>
+        </div>
+        
         <!-- Barra Lateral (Sidebar) -->
         <aside class="sidebar h-screen">
-            
-            <!-- Icono de Hamburguesa/Menú (Top-Left) -->
-            <div class="p-4 border-b border-gray-200">
-                <i class="bi bi-list text-3xl text-[var(--text-dark)] cursor-pointer"></i>
-            </div>
+        
             
             {% block divPropio %}
             {% endblock %}

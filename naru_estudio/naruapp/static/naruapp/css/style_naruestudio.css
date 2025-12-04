@@ -47,6 +47,10 @@ body {
     color: var(--text-dark);
 }
 
+.hidden {
+    display:
+}
+
 /* Estilo de la sección de Marcadores */
 .marker-section {
     border-bottom: 1px solid #E0E0E0;
