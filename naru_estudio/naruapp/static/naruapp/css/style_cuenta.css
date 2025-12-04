@@ -31,6 +31,12 @@ body {
     border-color: var(--yellow);
 }
 
+.imgLogin {
+    height: 100%;
+    width: 100%;
+    object-fit: cover
+}
+
 /* * Estilo adicional para la imagen (Opcional)
  * Asegura que la imagen no tenga un fondo blanco si es transparente,
  * aunque con object-cover y h-full no es estrictamente necesario.
