@@ -7,7 +7,7 @@
     <title>Inicia Sesión - Conexión Tutoría Estudiantil</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'naruapp/style.css' %}">
+    <link rel="stylesheet" href="{% static 'naruapp/css/style_cuenta.css' %}">
     <link rel="icon" type="image/png" href="{% static 'naruapp/img/sapo.png' %}"">
 </head>
 <body class="flex items-center justify-center min-h-screen p-4 sm:p-8">
@@ -61,7 +61,7 @@
                 <div class="mt-6 text-center">
                     <p class="text-sm">
                         ¿No tienes una cuenta?
-                        <a href="#" class="font-medium text-[var(--yellow)] hover:text-[var(--darker-yellow)]">
+                        <a href="{% url 'cuenta_registro' %}" class="font-medium text-[var(--yellow)] hover:text-[var(--darker-yellow)]">
                             Regístrate aquí
                         </a>
                     </p>

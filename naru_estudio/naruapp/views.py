@@ -28,6 +28,10 @@ def cuenta_registro_ok(request):
 
 
 def cuenta_ingreso(request):
+    """ Envío de formulario
+    if request.method == "POST":
+        form = Usuario
+    """
     return render(request, "naruapp/index.html")
 
 
